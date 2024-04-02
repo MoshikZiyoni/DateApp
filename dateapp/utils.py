@@ -3,7 +3,6 @@ import numpy as np
 import re
 import os
 import pytesseract
-from PIL import Image
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import uuid
