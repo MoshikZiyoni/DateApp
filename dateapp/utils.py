@@ -9,14 +9,16 @@ from django.views.decorators.csrf import csrf_exempt
 import uuid
 import requests
 from io import BytesIO
+pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract'
 
+os.environ['TESSDATA_PREFIX'] = '/usr/local/share/tessdata'
 # Get the directory path of the current Python script
-current_dir = os.path.dirname(os.path.abspath(__file__))
+# current_dir = os.path.dirname(os.path.abspath(__file__))
 
+
+# pytesseract.pytesseract.tesseract_cmd = os.path.join(current_dir, 'Tesseract-OCR2', 'tesseract.exe')
 # # Construct the path to the pytesseract executable
 # pytesseract.pytesseract.tesseract_cmd=f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
-# pytesseract.pytesseract.tesseract_cmd = os.path.join(current_dir, 'Tesseract-OCR2', 'tesseract.exe')
-
 # pytesseract_path = f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Users\moshi\DateApp\dateapp\Tesseract-OCR2\tesseract.exe"
 
