@@ -10,7 +10,13 @@ import uuid
 import requests
 from io import BytesIO
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\moshi\DateApp\Tesseract-OCR2\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Users\moshi\DateApp\dateapp\Tesseract-OCR2\tesseract.exe"
+# Get the directory path of the current Python script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# # Construct the path to the pytesseract executable
+pytesseract.pytesseract.tesseract_cmd=f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
+# pytesseract_path = f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
 
 def preprocess_image(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -84,29 +90,18 @@ def save_and_display_results(cropped_images):
         print(text)
     
 
-
-
-# def show_text_from_image(request):
-#     # image_path = r"C:\Users\moshi\DateApp\a.png"  # Change to your actual image path
-#     image = cv2.imread(image_path)
-
-#     boxes = detect_text_bubbles(image_path)
-#     cropped_images = classify_and_crop_text_areas(image, boxes)
-#     save_and_display_results(cropped_images)
-
-
-
-# image_path=r"C:\Users\moshi\DateApp\a.png"
-# show_text_from_image(image_path)
         
-
-
 
 @csrf_exempt
 def show_text_from_image(request):
     if request.method == 'POST':
         if 'image' in request.FILES:
-            # Read image file from request
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            print(current_dir)
+            print()
+            print()
+            print()
+    #         # Read image file from request
             image_file = request.FILES['image']
 
             # Generate unique filename
