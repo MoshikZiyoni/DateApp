@@ -15,7 +15,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # # Construct the path to the pytesseract executable
 # pytesseract.pytesseract.tesseract_cmd=f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
-pytesseract.pytesseract.tesseract_cmd = os.path.join(current_dir, 'Tesseract-OCR2', 'tesseract.exe')
+# pytesseract.pytesseract.tesseract_cmd = os.path.join(current_dir, 'Tesseract-OCR2', 'tesseract.exe')
 
 # pytesseract_path = f"{current_dir}\\Tesseract-OCR2\\tesseract.exe"
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Users\moshi\DateApp\dateapp\Tesseract-OCR2\tesseract.exe"
