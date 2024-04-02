@@ -118,24 +118,24 @@ ASGI_APPLICATION_OPTIONS = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('posgre_user'),
-        'HOST':os.environ.get('postgre_host'),
-        'USER': os.environ.get('posgre_user'),
-        'PASSWORD': os.environ.get('postgre_new_pass'),
-        'PORT':'5432',
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+#####POSTGRESSQL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('posgre_user'),
+#         'HOST':os.environ.get('postgre_host'),
+#         'USER': os.environ.get('posgre_user'),
+#         'PASSWORD': os.environ.get('postgre_new_pass'),
+#         'PORT':'5432',
+#     },
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
